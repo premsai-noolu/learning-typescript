@@ -13,3 +13,5 @@ type User = {
 
 const allUsers: User[] = [];
 allUsers.push({ name: "prem", isActive: true });
+
+export {};
