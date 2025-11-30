@@ -17,7 +17,7 @@ type User1 = {
   name: string;
   email: string;
   isActive: boolean;
-  creditCardDetails?: number;
+  creditCardDetails?: number; // This feild is optional means user can have this field while creating or not.
 };
 
 let newUser: User1 = {
@@ -29,4 +29,20 @@ let newUser: User1 = {
 
 newUser.email = "anil@gmail.com";
 //newUser._id=13 // This will throw an error cannot assign again to _is because it is readonly.
+
+type cardNumber = {
+  cardNumber: number;
+};
+
+type cardDate = {
+  cardDate: string;
+};
+
+type cardDetails = cardNumber &
+  cardDate & {
+    cvv: number;
+  };
+
+function cardInfo(Details: cardDetails) {}
+cardInfo({ cardNumber: 123, cardDate: "240811", cvv: 2345 });
 export {};
